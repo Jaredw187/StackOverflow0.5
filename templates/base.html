@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/styles.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script>var csrfToken = '{{ session.csrf_token }}';</script>
+         <title>{% block title %}Assign Title{%  endblock title %}</title>
+    {% endblock head %}
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: { families: [ 'Roboto+Condensed:400,300,700,300italic:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);})();
+    </script>
+</head>
+<body>
+    <!-- We use a wrapper to help with pushing a footer to the bottom of the
+         page when there is very little content on some of the pages -->
+    <div id="wrapper" class="wrapper pure-g">
+
+        <!-- Header & Logo Section -->
+        <div id="header" class="header pure-u-1 pure-u-md-4-5">
+            <div id="logo" class="logo_container">
+                <a href="/"><img src="/static/Stackoverflow_05_logo.png"></a>
+            </div>
+        </div>
+
+        <!-- Authentication of Users -->
+        <div id="authentication" class="auth_bar pure-u-1 pure-u-md-1-5">
+            <div class="auth_bar_content">
+                {% if g.user %}
+                    <p>Logged in as <span>{{ g.user.login }}</span><button class="logout pure-button" onclick="window.location.href='/logout'"> Log Out </button><p></p>
+                {% else %}
+                    <button class="login pure-button" onclick="window.location.href='/login'">Login</button>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Menu & Menu Links (Holds "New Post" & "View Posts" -->
+        <div id="menu" class="menu_bar pure-u-1 pure-u-md-5-5">
+            <div class="menu_bar_content">
+                    <button class="home pure-button" onclick="window.location.href='/'">Home</button>
+                    <button class="browse pure-button" onclick="window.location.href='/view_posts'">Browse Questions</button>
+                    <button class="ask pure-button" onclick="window.location.href='/new_post'">Ask Question</button>
+            </div>
+        </div>
+
+        <!-- Main Content Container -->
+        <div id="content_wrapper" class="content_wrapper pure-u-1">
+            <div id="page_title" class="page_title pure-u-1 pure-u-md-5-5">
+                <div id="page_title_content" class="page_title_content">
+                    {% block page_title %}<!-- Assign & Align Page Title -->{% endblock page_title %}
+                </div>
+            </div>
+            <div id="content_top" class="content_top pure-u-1 pure-u-md-5-5">
+                {% block content_top %}<!-- Assign & Align Content TOP -->{% endblock content_top %}
+            </div>
+            <div id="content_middle" class="content_mid pure-u-1 pure-u-md-5-5">
+                {% block content_mid %}<!-- Assign & Align Content MIDDLE -->{% endblock content_mid %}
+            </div>
+            <div id="content_bottom" class="content_bot pure-u-1 pure-u-md-5-5">
+                {% block content_bot %}<!-- Assign & Align Content BOTTOM -->{% endblock content_bot %}
+            </div>
+        </div>
+
+        <!-- Footer & Copyright Information -->
+        <div id="footer" class="footer pure-u-1 pure-u-md-5-5">
+            <div class="footer_content">
+                 Copyright © <script type="text/javascript">document.write(new Date().getFullYear())</script>
+                 Jared.W, Alexander. M., Joel.B, Justin.C, & Andres.C, All rights reserved | Design by AbM Design C.O.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

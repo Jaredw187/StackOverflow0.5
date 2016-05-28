@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Ask a New Question | {{ site_title }} {% endblock title %}
+
+{% block page_title %}
+        <div class="announcement_banner">
+            <div class="announcement_banner_content">
+                <h1>Ask Question</h1>
+            </div>
+        </div>
+{% endblock page_title %}
+
+{%  block content_top %}
+    <!--
+    Content TOP is not needed here, simply including it for consistency in the event that we use this container
+    on other pages
+    -->
+{% endblock content_top %}
+
+{% block content_mid %}
+    <div id="content_mid" class="ask">
+        <form class="pure-form pure-form-stacked" method="POST" action='/add_post'>
+            <fieldset>
+                <input class="new_question_title pure-input-1" id="new_question_title" type="text" name="postTitle" placeholder="Title">
+                <label for="new_question_content">More Information:</label>
+                <textarea id="new_question_content" class="new_question_content pure-input-1" name="userPost"
+                          placeholder="Your question..."></textarea>
+                <button class="submit_ask pure-button" type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock content_mid %}
+
+{% block content_bot %}
+    <!--
+    Content BOTTOM is not needed here, simply including it for consistency in the event that we use this container
+    on other pages
+    -->
+{% endblock content_bot %}

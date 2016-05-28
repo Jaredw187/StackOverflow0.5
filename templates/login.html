@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %} Login | {{ site_title }} {% endblock title %}
+
+{%  block content_top %}
+    <!--
+    Content TOP is not needed here, simply including it for consistency in the event that we use this container
+    on other pages
+    -->
+{% endblock content_top %}
+
+{% block content_mid %}
+    <div id="authentication_card" class="auth_card">
+        <div id="authentication_card_content" class="auth_card_content">
+            <div id="authentication_card_title" class="auth_card_title"><h2>Welcome</h2></div>
+            <fieldset>
+                <form class="login_user pure-form pure-form-stacked" method="POST" action="/login_user">
+                    <div class="form_field_1 pure-control-group">
+                        <label for="user-login-name">Username:</label>
+                        <input class="username_input pure-input-1-2" type="text" name="user" id="user-login-name"
+                               placeholder="Username">
+                    </div>
+                    <div class="form_field_2 pure-control-group">
+                        <label for="user-login-password">Password:</label>
+                        <input class="password_input pure-input-1-2" type="password" name="password"
+                               id="user-login-password" placeholder="Password">
+                    </div>
+                    <button class="login_card_button pure-button" type="submit">Login</button>
+                </form>
+            </fieldset>
+        </div>
+        <div class="create_account_link"><a href="/create_user">Create Account</a></div>
+            {% if state == 'bad' %}
+                <div id="error_message" class="error_msg"><p>Invalid user name or password.</p></div>
+            {% elif state == 'bad-username' %}
+                <div id="error_message" class="error_msg"><p>Invalid username.</p></div>
+            {% elif state == 'password-mismatch' %}
+                <div id="error_message" class="error_msg"><p>Passwords don't match.</p></div>
+            {% elif state == 'username-used' %}
+                <div id="error_message" class="error_msg"><p>Username already taken.</p></div>
+            {% elif not g.user and state == ' '%}
+                <div id="error_message" class="error_msg"><p>You must be logged in to ask a question.</p></div>
+            {% endif %}
+    </div>
+
+{% endblock content_mid %}
+
+{% block content_bot %}
+    <!--
+    Content BOTTOM is not needed here, simply including it for consistency in the event that we use this container
+    on other pages
+    -->
+{% endblock content_bot %}
+
+

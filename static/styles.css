@@ -1,0 +1,765 @@
+/*******************************************************************************************
+                        BASE/MOBILE Styling (NOTE: Mobile ≤ 768px / 48em
+*******************************************************************************************/
+/***************************************************
+    Le Thumbs Voting Styling
+****************************************************/
+.thumbsup, .thumbsdown{
+    font-family: FontAwesome;
+    display: inline-block;
+    cursor: pointer;
+
+}
+.thumbs_up_container p, .thumbs_down_container p{
+    display: inline-block;
+}
+.thumbs_up_container{
+    margin-top: -1.5em;
+}
+.thumbs_down_container{
+    margin-top: -1.5em;
+}
+.thumbsup[data-state="checked"]::after {
+    content: "\f164" /* checked thumbs up */
+}
+.thumbsup[data-state="unchecked"]::after {
+    content: "\f087" /* un-checked thumbs up */
+}
+.thumbsdown[data-state="checked"]::after {
+    content: "\f165" /* checked thumbs down */
+}
+.thumbsdown[data-state="unchecked"]::after {
+    content: "\f088" /* un-checked thumbs down */
+}
+
+/***************************************************
+    Base HTML Styling
+****************************************************/
+html,
+body {
+    background: #d9d9d9 url("/static/furley_bg.png") left repeat;
+	margin:0;
+	padding:0;
+	height:100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #4a4a4a;
+}
+h1{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+}
+h2{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.17em;
+    font-weight: 300;
+}
+h4{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+}
+h5{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.75em;
+    font-weight: 300;
+}
+h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.625em;
+    font-weight: 300;
+}
+p{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
+
+/***************************************************
+    General Content Styling
+****************************************************/
+.pure-g.wrapper {
+	min-height:100%;
+	position:relative;
+}
+.content_wrapper {
+	padding-bottom:5em; /* Height of the footer element */
+}
+
+#decorative_bar {
+    width: 16em;
+    height: 0.125em;
+    background: #4a4a4a;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#decorative_bar.accent_bar {
+    width: 12em;
+    height: 0.13em;
+    background: #4a4a4a;
+    box-sizing: border-box;
+    margin: -1em auto;
+}
+#main_list ul{
+    list-style-type: none;
+    padding: 1em 0 0 0;
+}
+#main_list a:link{
+    text-decoration: none;
+}
+#main_list_card{
+    background: #ffffff;
+    height: 100%;
+    min-height: 8em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+#main_list #main_list_card_content{
+    padding: 2.5em 1em 2em 2em;
+}
+
+/***************************************************
+    Header Styling
+****************************************************/
+.header {
+    height: 4.5em;
+    width: 100%;
+    z-index: 999;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: #ffffff;
+    border-bottom: 1px solid #d8d8d8;
+    -webkit-box-shadow: 0 1px 1px -1px  rgba(140, 140, 140, .15);
+    -moz-box-shadow: 0 1px 1px -1px  rgba(140, 140, 140, .15);
+    box-shadow: 0 1px 1px -1px  rgba(140, 140, 140, .15);
+}
+.logo_container{
+    height: 100px;
+    width: 320px;
+    margin-top: -1em;
+
+}
+
+/***************************************************
+    Authentication Bar Styling
+****************************************************/
+
+/* Authentication Bar for users to login/logout */
+.auth_bar{
+    background-color: #f2f2f2;
+    height: 2em;
+    text-align: center;
+    font-weight: 300;
+    font-size: 10pt;
+}
+.auth_bar_content{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12pt;
+   text-align: center;
+
+}
+.pure-button.login{
+    font-weight: 400;
+    background: none;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 0.3em 45% 0.4em 45%;
+    width: 100%;
+
+}
+.pure-button.logout{
+    font-weight: 400;
+    background: none;
+    text-transform: uppercase;
+    margin: 0em 0 0 0.3em;
+    font-size: 12pt;
+    padding: 0;
+    display: inline-block;
+}
+.auth_bar_content p{
+    margin: 0.2em auto;
+    text-align: center;
+}
+.auth_bar_content span{
+    text-transform: capitalize;
+}
+.pure-button.logout:active{
+    box-shadow: none;
+    background-image: none;
+    filter: none;
+}
+.pure-button.login:hover, .pure-button.logout:hover, .pure-button.login:active, .pure-button.logout:active{
+    background: transparent;
+}
+
+/***************************************************
+    Menu Bar Styling
+****************************************************/
+.menu_bar{
+    background: #4a4a4a;
+    height: 3em;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+}
+.menu_bar_content{
+    text-align: center;
+}
+.pure-button.home, .pure-button.browse, .pure-button.ask{
+    background: transparent;
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 3em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 0;
+    font-size: 12pt;
+    color: #ffffff;
+}
+.pure-button.home:hover, .pure-button.browse:hover, .pure-button.ask:hover{
+    background: #575757;
+}
+
+/***************************************************
+    Homepage Styling
+****************************************************/
+#content_mid.homepage_content {
+    height: 100%;
+    background: #f6f6f6;
+}
+#content_mid.homepage_content h1{
+    font-size: 20pt;
+    text-align: center;
+}
+#main_list.homepage_list{
+    margin-top: -2em;
+}
+#main_list.homepage_list #main_list_card_content{
+    margin-top: 1em;
+    margin-left: 2em;
+}
+.post_title{
+    font-size: 14pt;
+}
+.post_name{
+    margin-top: 0.5em;
+   text-transform: capitalize;
+   margin-left: 1em;
+}
+.post_date{
+    padding-left: 0.5em;
+    display: inline-block;
+    font-size: 10pt;
+}
+.post_numb_answers{
+    font-size: 10pt;
+    margin-left: 1.2em;
+    text-transform: capitalize;
+}
+.announcement_banner{
+    margin-top: 0em;
+    height: 6em;
+    width: 100%;
+    background: #ffffff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+}
+.announcement_banner_content{
+    padding: 1em 0 1em 0;
+}
+.announcement_banner_content h1{
+    margin: -0.4em auto;
+    padding-bottom: 0.4em;
+}
+
+.ribbon{
+    padding: 0.1em 0 0.1em 0;
+    background: #79d0f2;
+
+}
+strong.ribbon_content h1{
+    margin: 0.5em auto;
+}
+strong.ribbon_content h3{
+    margin-top: -1.2em;
+}
+
+/***************************************************
+    Display Posts Page Styling
+****************************************************/
+ #content_top.display_posts_content {
+     background: #f6f6f6;
+     height: 100%;
+     margin-top: -1em;
+     padding-bottom: 1em;
+ }
+/***************************************************
+    Display Post Page Styling
+****************************************************/
+#decorative_bar.page_title_bar{
+    margin-top: -0.9em;
+    height: 0.15em;
+}
+.page_title_content{
+    text-align: center;
+}
+.page_title_content h1{
+    font-size: 20pt;
+}
+.page_title_content h2{
+    font-size: 16pt;
+}
+.page_title_content h3{
+    margin-top: -1em;
+    font-size: 10pt;
+}
+.page_list #main_list_card #main_list_card_content{
+    padding-top: 1.5em;
+}
+#main_list_card #main_list_card_content h3{
+    text-transform: capitalize;
+}
+#content_top.question{
+    padding: 2em 1em 2em 1em;
+    margin-top: 2em;
+    background: #f2f2f2;
+    border-top: solid 0.2em #ffffff;
+    border-bottom: solid 0.2em #ffffff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+
+}
+#content_mid.answer{
+    background: #d2d2d2;
+    padding: 1em 1em 1em 1em;
+}
+#content_mid.answer label{
+    font-weight: 300;
+}
+#content_mid.answer fieldset{
+    border: none;
+}
+
+#response.pure-input-1.answer_text_area{
+    height: 8em;
+
+}
+.pure-button.submit{
+    margin: 1em auto;
+    border-radius: 0.5em;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #f2f2f2;
+    float: right;
+}
+.pure-button.submit:hover {
+    background: transparent;
+
+}
+#content_bottom.other_answers{
+    padding-bottom: 2em;
+}
+#content_bottom.other_answers #main_list_card_content{
+    margin-top: -2em;
+}
+#content_bottom.other_answers #main_list_card_content h5{
+    margin-top: -1em;
+
+}
+.answers_header_card{
+    background: #575757;
+    height: 4em;
+    margin-top: 2em;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+}
+.answers_header_card_content{
+    text-align: center;
+    padding-top: 0.01em;
+    color: #ffffff;
+}
+
+/***************************************************
+    Ask Page Styling
+****************************************************/
+#content_mid.ask{
+    padding: 2em 1em 2em 1em;
+    background: #f2f2f2;
+    border-top: solid 0.2em #ffffff;
+    border-bottom: solid 0.2em #ffffff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+}
+.pure-button.submit_ask{
+    margin: 1em auto;
+    border-radius: 0.5em;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #ffffff;
+    color: #d8d8d8;
+    float: right;
+}
+.pure-button.submit_ask:hover {
+    background: transparent;
+
+}
+#content_mid.ask fieldset{
+    border: none;
+}
+#content_mid.ask label{
+    visibility: hidden;
+}
+#new_question_content.pure-input-1.new_question_content{
+    height: 8em;
+}
+
+/***************************************************
+   Login Page / Create Account Page Styling
+****************************************************/
+#authentication_card{
+    display: block;
+    height: 24em;
+    width: 100%;
+    margin: 2em auto 2em auto;
+    background: #ffffff;
+    -moz-box-shadow: 0em 0.125em 0.125em rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0em 0.125em 0.125em rgba(0, 0, 0, 0.3);
+    box-shadow: 0em 0.125em 0.125em rgba(0, 0, 0, 0.3);
+}
+#authentication_card_content{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7em;
+    width: 15em;
+    height: 10em;
+}
+#authentication_card_title {
+    margin: -3em auto;
+    padding-bottom: 1.5em;
+    text-align: center;
+    font-size: 16pt;
+}
+
+#authentication_card_content label{
+    visibility: hidden;
+}
+#authentication_card_content fieldset{
+    border: hidden;
+}
+.form_field_1, .form_field_2{
+    margin-top: -1.1em;
+}
+.form_field_3{
+    margin-top: -2.3em;
+}
+.login_user{
+    padding-left: 0.8em;
+}
+.pure-button.login_card_button{
+    margin-left: auto;
+    margin-right: auto;
+    width: 12em;
+    border-radius: 0.5em;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #f2f2f2;
+    text-align: center;
+}
+.pure-input-1-2.username_input, .pure-input-1-2.password_input{
+    min-width: 12em;
+}
+.pure-input-1-2.password_input{
+    margin-top: -3em;
+}
+
+.create_account_link{
+    font-size: 12pt;
+    text-align: center;
+}
+.create_account_link a:active, a:visited, a:hover, a:link{
+    text-decoration: none;
+    color: #4a4a4a;
+
+}
+/*****************************
+    Create Account Page
+*****************************/
+.pure-input-1-2.create_username_input, .pure-input-1-2.create_password_input, .pure-input-1-2.confirm_password_input{
+    min-width: 12em;
+}
+.create_user{
+    padding-left: 0.8em;
+}
+#authentication_card_title.create_card_title{
+    margin-top: -4em;
+}
+.existing_account_link{
+    font-size: 12pt;
+    text-align: center;
+    margin: 1em auto;
+}
+.pure-button.create_user_button{
+    margin-left: auto;
+    margin-right: auto;
+    width: 12em;
+    border-radius: 0.5em;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #f2f2f2;
+    text-align: center;
+}
+.create_user_error{
+    margin-top: -0.6em;
+}
+
+
+.error_msg{
+    text-align: center;
+    color: #f2f2f2;
+    height: 3.7em;
+    width: 100%;
+    padding-top: 0.3em;
+    font-size: 11pt;
+    font-weight: 300;
+    margin-top: 1em;
+    background: #8b0000;
+}
+
+/***************************************************
+    Footer Styling
+****************************************************/
+.footer {
+    height: 5em;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    border-top: 2px solid #d8d8d8;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    -moz-box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+    box-shadow: 0 1px 1px 0 rgba(140, 140, 140, .15);
+}
+.footer_content{
+    margin-top: 2em;
+    text-align: center;
+    font-size: 10pt;
+    color: #4a4a4a;
+    padding: 0 0.5em;
+}
+
+/*******************************************************************************************
+                        Desktop Styling (NOTE: Mobile  768px / 48em
+*******************************************************************************************/
+@media screen and (min-width: 48em){
+    /***************************************************
+        Desktop Authentication Bar Styling
+    ****************************************************/
+    /* Authentication Bar for users to login/logout */
+    .auth_bar{
+        background: #ffffff;
+        height: 7.8em;
+        text-align: center;
+        font-weight: 300;
+        font-size: 10pt;
+        border-bottom: 1px solid #d8d8d8;
+        -webkit-box-shadow: 0 1px 1px -1px rgba(140, 140, 140, .15);
+        -moz-box-shadow: 0 1px 1px -1px  rgba(140, 140, 140, .15);
+        box-shadow: 0 1px 1px -1px rgba(140, 140, 140, .15);
+    }
+    .auth_bar_content{
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 12pt;
+        text-align: center;
+        margin: 1.7em auto;
+        float: right;
+
+    }
+    .pure-button.login{
+        font-weight: 400;
+        background: none;
+        text-transform: uppercase;
+        margin: 0 auto;
+        padding: 1.2em 5em 0.4em 0;
+
+    }
+    .pure-button.login:active{
+        box-shadow: none;
+        background-image: none;
+        filter: none;
+    }
+    .pure-button.logout{
+        display: inline-block;
+        margin-top: -0.1em;
+    }
+    .auth_bar p{
+        display: inline-block;
+        font-size: 12pt;
+        margin-top: 1em;
+    }
+    /***************************************************
+        Desktop Homepage Styling
+    ****************************************************/
+    #page_title_content{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .ribbon {
+        /* This ribbon is based on a 16px font side and a 24px vertical rhythm.
+        I've used em's to position each element for scalability. If you want to
+        use a different font size you may have to play with the position of the ribbon elements */
+        width: 50%;
+        position: relative;
+        background: #79d0f2;
+        color: #4a4a4a;
+        text-align: center;
+        padding: 0.01em 2em; /* Adjust to suit */
+        margin: 1em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+    }
+    .ribbon:before, .ribbon:after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -1em;
+        border: 1.5em solid #4bc0ed;
+        z-index: -1;
+        }
+    .ribbon:before {
+        left: -2em;
+        border-right-width: 1.5em;
+        border-left-color: transparent;
+        }
+    .ribbon:after {
+        right: -2em;
+        border-left-width: 1.5em;
+        border-right-color: transparent;
+        }
+    .ribbon .ribbon_content:before, .ribbon .ribbon_content:after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #33b8eb transparent transparent transparent;
+        bottom: -1em;
+    }
+    .ribbon .ribbon_content:before {
+        left: 0;
+        border-width: 1em 0 0 1em;
+    }
+    .ribbon .ribbon_content:after {
+        right: 0;
+        border-width: 1em 1em 0 0;
+    }
+    .non_semantic_protector {
+        position: relative;
+        z-index: 1;
+        margin: 2em;
+    }
+
+    /***************************************************
+       Desktop Login Page / Create Account Page Styling
+    ****************************************************/
+    #authentication_card {
+        width: 24em;
+        -moz-border-radius: 0.125em;
+        -webkit-border-radius: 0.125em;
+        border-radius: 0.375em;
+    }
+    /***************************************************
+       Desktop Homepage Styling
+    ****************************************************/
+    #content_mid.homepage_content {
+        margin-top: -3em;
+        padding-bottom: 3em;
+        margin-left: auto;
+        margin-right: auto;
+        width: 85%;
+
+    }
+    .announcement_banner{
+        margin-top: 2em;
+        z-index: 1;
+        height: 6em;
+        width: 100%;
+        background: #ffffff;
+    }
+    .announcement_banner_content{
+        padding: 1em 0 1em 0;
+    }
+    .announcement_banner_content h1{
+        margin: 0.7em auto;
+        padding-bottom: 0;
+    }
+    .announcement_banner_content h2{
+        font-size: 14pt;
+    }
+
+    /***************************************************
+       Desktop Ask Page Styling
+    ****************************************************/
+    #content_mid.ask{
+        width: 75%;
+        max-height: 75%;
+        padding: 2em 1em 0em 1em;
+        margin: 1em auto 0 auto;
+        border: solid 0.2em #ffffff;
+        -moz-border-radius: 0.125em;
+        -webkit-border-radius: 0.125em;
+        border-radius: 0.375em;
+    }
+    #content_mid.ask fieldset{
+        padding-top: 1em;
+        border: none;
+    }
+    #content_mid.ask label{
+        visibility: hidden;
+    }
+    #new_question_content.pure-input-1.new_question_content{
+        height: 12em;
+    }
+    .content_mid{
+        padding-top: 1em;
+        padding-bottom: 2em;
+    }
+    /***************************************************
+       Desktop Display Posts Page Styling
+    ****************************************************/
+    #content_top.display_posts_content{
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        background: #f6f6f6;
+        height: 100%;
+        margin-top: -0.9em;
+        padding: 0em 1em 2em 1em;
+
+    }
+    .page_title_content h1{
+        margin-top: 0.3em;
+    }
+
+    /***************************************************
+       Desktop Display Post Page Styling
+    ****************************************************/
+    #content_top.question, #content_mid.answer, #content_bottom.other_answers{
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #content_top.question{
+        border-left: solid 0.2em #ffffff;
+        border-right: solid 0.2em #ffffff;
+    }
+
+    /***************************************************
+       Desktop Footer Styling
+    ****************************************************/
+    .footer_content{
+        margin: 3em 0 0 0;
+    }
+
+}

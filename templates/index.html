@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %} Home | {{ site_title }}{% endblock title %}
+
+{% block page_title %}
+    <div class="non_semantic_protector">
+        <div class="ribbon">
+            <strong class="ribbon_content">
+                    <h1 align="center">Welcome to Stack Overflow 0.5!</h1>
+                    <h3 align="center"> The worst way to get your questions answered! </h3>
+            </strong>
+        </div>
+    </div>
+{% endblock page_title %}
+
+{%  block content_top %}
+    <!--
+    Content TOP is not needed here, simply including it for consistency in the event that we use this container
+    on other pages
+    -->
+{% endblock content_top %}
+{% block content_mid%}
+    <script type='application/javascript'>
+
+    </script>
+    <div id="content_mid" class="homepage_content">
+        {# display the first 25 questions #}
+
+        <!-- need to sort by date instead of printing first 25 -->
+        <div class="announcement_banner">
+            <div class="announcement_banner_content">
+                <h1> Recent Questions </h1>
+            </div>
+        </div>
+        {% set x = 1 %}
+        {% for user in users %}
+            {% for question in questions if x < 25%}
+                {% if question.creator_id == user.id %}
+                    {% set name = user.login %}
+                    <div id="main_list">
+                    <ul>
+                        <div id="main_list_card">
+                            <div id="main_list_card_content">
+                                <a href="/post/{{ question.id }}">
+                                    <div class="post_title">"{{ question.title }}"<div class="post_date">@ {{ question.date }}</div></div>
+                                    <div class="post_name">by: {{ name }}</div><div class="post_numb_answers">with {{ question.num_answers }} answers</div>
+                                </a>
+                            </div>
+                        </div>
+                        </ul>
+                    </div>
+                {% endif %}
+                {% set x = x + 1 %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock content_mid %}
+
+{% block content_bot %}
+    <!--
+    Content BOTTOM is not needed here, simply including it for consistency in the event that we use this container
+    on other pages
+    -->
+{% endblock content_bot %}
+
+
+
